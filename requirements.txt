@@ -4,7 +4,8 @@
 # server/app/__init__.py: 1
 # server/app/views/__init__.py: 4
 # server/app/views/sample.py: 2
-# server/tests/views/__init__.py: 5
+# server/app/views/signup.py: 2
+# server/tests/views/__init__.py: 4
 Flask == 1.0.2
 
 # server/app/__init__.py: 2
@@ -16,19 +17,19 @@ Flask_JWT_Extended == 3.9.1
 
 # server/app/views/__init__.py: 6
 # server/app/views/sample.py: 3
+# server/app/views/signup.py: 3
 Flask_RESTful == 0.3.6
+
+# server/app/models/__init__.py: 1
+Flask_SQLAlchemy == 2.3.2
+
+# server/app/models/sample.py: 1
+SQLAlchemy == 1.2.7
 
 # server/app/__init__.py: 4
 # server/app/views/sample.py: 1
+# server/app/views/signup.py: 1
 flasgger == 0.8.3
-
-# server/app/__init__.py: 6
-# server/app/models/support/mongo_helper.py: 5
-mongoengine == 0.15.0
-
-# server/app/models/support/mongo_helper.py: 1
-# server/tests/views/__init__.py: 4
-pymongo == 3.6.1
 
 # server/app/views/__init__.py: 2
 ujson == 1.35
