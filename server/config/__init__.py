@@ -17,13 +17,7 @@ class Config:
     JWT_REFRESH_TOKEN_EXPIRES = timedelta(days=300)
     JWT_HEADER_TYPE = 'JWT'
 
-    MONGODB_SETTINGS = {
-        'host': None,
-        'port': None,
-        'username': None,
-        'password': os.getenv('MONGO_PW_{}'.format(SERVICE_NAME_UPPER)),
-        'db': SERVICE_NAME
-    }
+    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:germany33@localhost:3306/soccer"
 
     SWAGGER = {
         'title': SERVICE_NAME,
@@ -47,5 +41,9 @@ class Config:
                 'name': 'Some Tag',
                 'description': 'Some API'
             },
+            {
+                'name': '계정',
+                'description': '계정과 관련된 API'
+            }
         ]
     }
