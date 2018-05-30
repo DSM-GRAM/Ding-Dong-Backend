@@ -5,6 +5,9 @@ from flask_restful import Api, request
 from app.docs.signup import *
 from app.views import BaseResource, json_required
 
+from app.models import db
+from app.models.model import UserModel
+
 api = Api(Blueprint(__name__, __name__))
 
 
