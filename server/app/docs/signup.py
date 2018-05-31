@@ -15,6 +15,13 @@ SIGNUP_POST = {
             'in': 'json',
             'type': 'str',
             'required': True
+        },
+        {
+            'name': 'period',
+            'description': '월경주기',
+            'in': 'json',
+            'type': 'str',
+            'required': True
         }
     ],
     'responses': {
