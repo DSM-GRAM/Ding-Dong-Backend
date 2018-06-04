@@ -6,7 +6,7 @@ from app.docs.sample import *
 from app.views import BaseResource
 
 from app.models import db
-from app.models.model import UserModel, RhythmWay
+from app.models.model import UserModel, BeforeMenstruationSymptom, SymptomData
 
 
 api = Api(Blueprint('sample_module', __name__))
@@ -38,10 +38,23 @@ class SampleCheck(BaseResource):
     def post(self):
         user_id = request.form['userId']
 
-        row = RhythmWay(user_id=user_id, shortest_period=22, longest_period=30, recently_started_year=2018,
-                        recently_started_month=7, recently_started_day=4)
+        row = BeforeMenstruationSymptom(user_id=user_id, symptom_category=1)
 
         db.session.add(row)
         db.session.commit()
 
         return Response('success~~~~!!! ang gimothi', 201)
+
+
+@api.resource('/check/check')
+class SampleCheckCheck(BaseResource):
+    def post(self):
+        user_id = request.form['userId']
+        symptom_category = request.form['cate']
+
+        row = SymptomData(user_id=user_id, symptom_category=symptom_category)
+
+        db.session.add(row)
+        db.session.commit()
+
+        return Response('success~~~~!!! ang real gimothi', 201)
