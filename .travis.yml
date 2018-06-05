@@ -6,17 +6,8 @@ python:
   - "3.5"
   - "3.6"
   - "pypy3.5"
-services:
-  - mysql
-addons:
-  apt:
-    sources:
-      - mysql-5.7-trusty
-    packages:
-      - mysql-server
-      - mysql-client
 before_install:
-  - mysql -e 'CREATE DATABASE dingdong;'
+  - docker run -e MYSQL_ROOT_PASSWORD=니-비밀번호 -d -p 3306:3306 mysql 
 install:
   - pip3 install -r requirements.txt
   - pip3 install coveralls
