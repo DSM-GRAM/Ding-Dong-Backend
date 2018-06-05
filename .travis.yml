@@ -1,5 +1,5 @@
 os: linux
-sudo: false
+sudo: required
 language: python
 cache: pip
 python: 
@@ -16,15 +16,12 @@ addons:
       - mysql-server
       - mysql-client
 before_install:
-  - sudo mysql -e "use mysql; update user set authentication_string=PASSWORD('germany33') where User='root'; update user set plugin='mysql_native_password';FLUSH PRIVILEGES;"
-  - sudo service mysql restart
+  - mysql -e 'CREATE DATABASE dingdong;'
 install:
   - pip3 install -r requirements.txt
   - pip3 install coveralls
 before_script:
   - cd server
-script:
-  - pytest
 after_success:
   - coverage report
   - coveralls
